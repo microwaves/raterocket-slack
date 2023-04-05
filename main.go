@@ -46,7 +46,7 @@ func rateRocketHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	slackResponse := fmt.Sprintf("Rate for %s: %.2f (%s %s)", response.Currency, response.Price, response.Date, response.Time)
+	slackResponse := fmt.Sprintf("1 BTC to %s rate: %.2f (%s %s)", response.Currency, response.Price, response.Date, response.Time)
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(&slack.Msg{Text: slackResponse})
 }
