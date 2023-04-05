@@ -20,10 +20,15 @@ type RateResponse struct {
 }
 
 func main() {
+	port := os.Getenv("PORT")
+	if port == "" {
+		log.Fatal("$PORT must be set")
+	}
+
 	router := mux.NewRouter()
 	router.HandleFunc("/raterocket", rateRocketHandler).Methods("POST")
 	http.Handle("/", router)
-	log.Fatal(http.ListenAndServe(":8080", router))
+	log.Fatal(http.ListenAndServe(":" + port, router))
 }
 
 func rateRocketHandler(w http.ResponseWriter, r *http.Request) {
