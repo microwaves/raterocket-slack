@@ -52,7 +52,7 @@ func rateRocketHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func fetchRate(currency string) (*RateResponse, error) {
-	url := fmt.Sprintf("https://RateRocket.io/api/%s", currency)
+	url := buildAPIURL(currency)
 	resp, err := http.Get(url)
 	if err != nil {
 		return nil, err
@@ -66,4 +66,8 @@ func fetchRate(currency string) (*RateResponse, error) {
 	}
 
 	return &rateResponse, nil
+}
+
+func buildAPIURL(currency string) string {
+    return fmt.Sprintf("https://RateRocket.io/api/%s", currency)
 }
