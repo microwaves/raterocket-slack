@@ -81,4 +81,4 @@ Stephano Zanzin Ferreira - [@microwaves](https://github.com/microwaves)
 
 ## License
 
-MarketHistorian is released under the BSD license. See [LICENSE](https://github.com/microwaves/MarketHistorian/blob/main/LICENSE).
+RateRocket Slack Bot is released under the BSD license. See [LICENSE](https://github.com/microwaves/MarketHistorian/blob/main/LICENSE).
